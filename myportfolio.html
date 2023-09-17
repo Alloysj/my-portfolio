@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My portfolio</title>
+    <link rel="stylesheet" href="myPortfolio.css">
+</head>
+<body>
+    <header>
+        <div class="header_content">
+            <h1 class="title"> Alloys portfolio</h1>
+            <p class="header">Web developer and designer</p>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About me</a></li>
+            <li><a href="#skills">My skills</a></li>
+            <li><a href="#projects">My projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+    <section id = "home">
+        <h2>Home</h2>
+        <div class="home">
+            <h3>Author <span>"Alloys"</span></h3>
+            <p>Welcome to my portfolio. <br>I am </p>
+            <button>Download my CV</button>
+        </div>
+    </section>
+    <section id = "about">
+        <h2>About</h2>
+        <div class="about">
+            <p>I am a web developer as well as a web designer. I create and desighn captivating websites for my clients. Am also a software developer. You can view some of my works are in the <a href="#skills">skills</a> section</p>
+            <p>I have a berchelors degree in computer science from <b>Egerton university</b>
+            <br>I have a 5 year working experience in different companies here in kenya. I have worked wiyh the green tech company for two years as a web developer refining my skills to the best</p>
+        </div>
+    </section>
+    <section id = "skills">
+        <h2>Skills</h2>
+        <div class="skills">
+            <label for="html">HTML</label>
+            <progress id = skills value = "85" max="100">85</progress>
+            <label for="html">Javascript</label>
+            <progress id = skills value = "75" max="100">85</progress>
+            <label for="html">css</label>
+            <progress id = skills value = "82" max="100">85</progress>
+            <label for="html">node</label>
+            <progress id = skills value = "65" max="100">85</progress>
+            <label for="html">python</label>
+            <progress id = skills value = "55" max="100">85</progress>
+        </div>
+    </section>
+    
+    <section id = "projects">
+        <h2>My projects</h2>
+        <div class="projects">
+            <div class="project">
+                <img src="img/e-commerce.jpg" alt="Online store" width="300px">
+                <div class="project-description">
+                    <h3>E-commerce</h3>
+                    <p><a href="https://github.com/aloisedollar/my-portfolio" target="_blank">GitHub</a></p>
+                </div>
+            </div>
+
+            <div class="project">
+                <img src="img/e-commerce1.jpg" alt="Online store" width="300px">
+                <div class="project-description">
+                    <h3>E-commerce</h3>
+                    <p><a href="https://github.com/aloisedollar/my-portfolio" target="_blank">GitHub</a></p>
+                </div>
+            </div>
+
+            <div class="project">
+                <img src="img/car_rental.jpg" alt="car rental" width="300px">
+                <div class="project-description">
+                    <h3>car rental</h3>
+                    <p><a href="https://github.com/aloisedollar/my-portfolio" target="_blank">GitHub</a></p>
+                </div>
+            </div>
+
+            <div class="project">
+                <img src="img/car-rental1.jpg" alt="car rental" width="300px">
+                <div class="project-description">
+                    <h3>car rental</h3>
+                    <p><a href="https://github.com/aloisedollar/my-portfolio" target="_blank">GitHub</a></p>
+                </div>
+            </div>
+            <div class="project">
+                <img src="img/forum.jpg" alt="forum website" width="300px">
+                <div class="project-description">
+                    <h3>Forum website</h3>
+                    <p><a href="https://github.com/aloisedollar/my-portfolio" target="_blank">GitHub</a></p>
+                </div>
+            </div>
+            <div class="project">
+                <img src="img/movie_review.jpg" alt="movie review website" width="300px">
+                <div class="project-description">
+                    <h3>movie review</h3>
+                    <p><a href="https://github.com/aloisedollar/my-portfolio" target="_blank">GitHub</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id = "contact">
+        <h2>Contact me</h2>
+        <div class="contact">
+            <div class="social_media">
+                <ul>
+                    <li><a href="#">X (Twitter)</a></li>
+                    <li><a href="#">facebook</a></li>
+                    <li><a href="#">intagram</a></li>
+                    <li><a href="#">discord</a></li>
+                </ul>
+            </div>
+
+            <label for="phone">Phone: +254734596264</label>
+            <label for="email">MAil to: Alloysgigs@gmail.com</label>
+
+            <p>connect with me: send me a message</p>
+            <div class="connect">
+                <form action="action_page.php">
+                  
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                  
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+                    <label for="subject">Subject</label>
+                    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+                  
+                    <input type="submit" value="Submit">
+                  
+                </form>
+            </div>
+        </div>
+    </section>
+</div>
+        <p>&copy; 2023 alloys. Love creations</p>
+    </footer>
+
+    <script src="myPortfolio.js"></script>
+</body>
+</html>
