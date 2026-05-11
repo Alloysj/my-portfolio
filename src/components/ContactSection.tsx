@@ -40,19 +40,19 @@ export function ContactSection() {
     },
     {
       name: "GitHub",
-      url: "https://github.com/alloys",
+      url: "https://github.com/alloysj",
       icon: Github,
       color: "hover:text-gray-900",
     },
     {
-      name: "Twitter",
-      url: "https://twitter.com/alloys",
+      name: "X",
+      url: "https://x.com/alloys",
       icon: Twitter,
       color: "hover:text-blue-400",
     },
     {
       name: "Email",
-      url: "mailto:alloys45@gmail.com.com",
+      url: "mailto:aloise148@gmail.com.com",
       icon: Mail,
       color: "hover:text-red-500",
     },
@@ -261,7 +261,7 @@ export function ContactSection() {
                   <div>
                     <p className="font-medium">Email</p>
                     <p className="text-muted-foreground">
-                      alloys45@gmail.com
+                      aloise148@gmail.com
                     </p>
                   </div>
                 </div>

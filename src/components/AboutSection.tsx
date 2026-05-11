@@ -1,7 +1,6 @@
 import { motion } from "motion/react";
 import { Card, CardContent } from "./ui/card";
 import { Badge } from "./ui/badge";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 export function AboutSection() {
   const achievements = [
@@ -74,8 +73,8 @@ export function AboutSection() {
                   ease: "easeInOut",
                 }}
               />
-              <ImageWithFallback
-                src="https://images.unsplash.com/photo-1576558656222-ba66febe3dec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdCUyMHBvcnRyYWl0fGVufDF8fHx8MTc1Njc5ODg4NHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+              <img
+                src="/imgs/profile.jpg"
                 alt="Alloys - Professional Portrait"
                 className="relative z-10 w-full h-auto rounded-2xl shadow-2xl"
               />

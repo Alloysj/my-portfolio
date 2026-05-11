@@ -1,12 +1,14 @@
 import { motion } from 'motion/react';
 import { Button } from './ui/button';
-import { ImageWithFallback } from './figma/ImageWithFallback';
 
 interface HeroSectionProps {
   onNavigate: (page: string) => void;
 }
 
 export function HeroSection({ onNavigate }: HeroSectionProps) {
+  const cvPath = '/Resume-Aloise-Mutune-John-Joveo-Ai.pdf';
+  const cvDownloadName = 'Aloise_Mutune_John_CV.pdf';
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -39,7 +41,7 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-background via-background to-secondary/20">
       {/* Background tech elements */}
-      <div className="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 opacity-5 pointer-events-none">
         <div className="absolute top-20 left-20 w-32 h-32 border-2 border-primary rounded-full" />
         <div className="absolute top-40 right-32 w-16 h-16 border border-primary rotate-45" />
         <div className="absolute bottom-32 left-40 w-24 h-24 border border-primary" />
@@ -47,7 +49,7 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
       </div>
 
       <motion.div
-        className="max-w-6xl mx-auto px-6 py-20 flex flex-col lg:flex-row items-center gap-12"
+        className="relative z-10 max-w-6xl mx-auto px-6 py-20 flex flex-col lg:flex-row items-center gap-12"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -80,22 +82,15 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
             variants={itemVariants}
             className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
           >
-            <Button
-              size="lg"
-              className="px-8 py-6 text-lg"
-              onClick={() => {
-                // Simulate CV download
-                const link = document.createElement('a');
-                link.href = '#';
-                link.download = 'Alloys_CV.pdf';
-                link.click();
-              }}
-            >
-              Download CV
+            <Button size="lg" className="px-8 py-6 text-lg" asChild>
+              <a href={cvPath} download={cvDownloadName}>
+                Download CV
+              </a>
             </Button>
             <Button
               variant="outline"
               size="lg"
+              type="button"
               className="px-8 py-6 text-lg"
               onClick={() => onNavigate('projects')}
             >
@@ -112,8 +107,8 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
         >
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-2xl transform rotate-6 scale-105" />
-            <ImageWithFallback
-              src="https://images.unsplash.com/photo-1719400471588-575b23e27bd7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBkZXZlbG9wZXIlMjB3b3Jrc3BhY2UlMjBzZXR1cHxlbnwxfHx8fDE3NTY4NDE3Mzh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+            <img
+              src="/imgs/profile.jpg"
               alt="Professional developer workspace"
               className="relative z-10 w-full h-auto rounded-2xl shadow-2xl"
             />
@@ -123,7 +118,7 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
 
       {/* Scroll indicator */}
       <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 pointer-events-none"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
       >

@@ -8,15 +8,28 @@ import { SkillsSection } from './components/SkillsSection';
 import { ProjectsSection } from './components/ProjectsSection';
 import { ContactSection } from './components/ContactSection';
 
+type PageId = 'home' | 'about' | 'skills' | 'projects' | 'contact';
+
 export default function App() {
-  const [currentPage, setCurrentPage] = useState('home');
+  const [currentPage, setCurrentPage] = useState<PageId>('home');
   const [isLoading, setIsLoading] = useState(true);
+  const pageIds: PageId[] = ['home', 'about', 'skills', 'projects', 'contact'];
 
   // Simulate initial loading
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 1000);
     return () => clearTimeout(timer);
   }, []);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [currentPage]);
+
+  const handleNavigate = (page: string) => {
+    if (pageIds.includes(page as PageId)) {
+      setCurrentPage(page as PageId);
+    }
+  };
 
   // Page transition variants
   const pageVariants = {
@@ -44,7 +57,7 @@ export default function App() {
   const renderPage = () => {
     switch (currentPage) {
       case 'home':
-        return <HeroSection onNavigate={setCurrentPage} />;
+        return <HeroSection onNavigate={handleNavigate} />;
       case 'about':
         return <AboutSection />;
       case 'skills':
@@ -54,7 +67,7 @@ export default function App() {
       case 'contact':
         return <ContactSection />;
       default:
-        return <HeroSection onNavigate={setCurrentPage} />;
+        return <HeroSection onNavigate={handleNavigate} />;
     }
   };
 
@@ -84,7 +97,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation */}
-      <Navigation currentPage={currentPage} onPageChange={setCurrentPage} />
+      <Navigation currentPage={currentPage} onPageChange={handleNavigate} />
 
       {/* Page Content with Transitions */}
       <main className="pt-16">

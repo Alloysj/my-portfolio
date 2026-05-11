@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { Card, CardContent, CardFooter } from './ui/card';
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
-import { ImageWithFallback } from './figma/ImageWithFallback';
 import { ExternalLink, Github, Filter } from 'lucide-react';
 
 export function ProjectsSection() {
@@ -16,7 +15,7 @@ export function ProjectsSection() {
       category: 'fullstack',
       role: 'Full Stack Developer',
       description: 'A sustainable e-commerce platform built with React and Node.js, featuring real-time inventory management and carbon footprint tracking for eco-conscious shoppers.',
-      image: 'https://images.unsplash.com/photo-1577333715735-8fcb0359d906?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlY29tbWVyY2UlMjB3ZWJzaXRlJTIwbW9ja3VwfGVufDF8fHx8MTc1Njc5MTQzM3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+      image: '/imgs/projects/ecoshop.jpg',
       technologies: ['React', 'Node.js', 'PostgreSQL', 'Tailwind CSS', 'Stripe'],
       githubUrl: '#',
       liveUrl: '#',
@@ -27,7 +26,7 @@ export function ProjectsSection() {
       category: 'frontend',
       role: 'Frontend Developer',
       description: 'A comprehensive analytics dashboard for environmental data visualization, built with React and D3.js. Features real-time charts and interactive data exploration.',
-      image: 'https://images.unsplash.com/photo-1575388902449-6bca946ad549?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXNoYm9hcmQlMjBpbnRlcmZhY2UlMjBkZXNpZ258ZW58MXx8fHwxNzU2ODQ0MTM3fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+      image: '/imgs/projects/greentech-analytics.jpg',
       technologies: ['React', 'TypeScript', 'D3.js', 'Recharts', 'Material-UI'],
       githubUrl: '#',
       liveUrl: '#',
@@ -38,7 +37,7 @@ export function ProjectsSection() {
       category: 'mobile',
       role: 'Mobile Developer',
       description: 'A React Native app that helps users track their carbon footprint and discover eco-friendly alternatives. Features gamification and social sharing.',
-      image: 'https://images.unsplash.com/photo-1618761714954-0b8cd0026356?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBpbnRlcmZhY2UlMjBkZXNpZ258ZW58MXx8fHwxNzU2ODU0Mjg5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+      image: '/imgs/projects/climate-action-shop.jpg',
       technologies: ['React Native', 'Expo', 'MongoDB', 'Express', 'JWT'],
       githubUrl: '#',
       liveUrl: '#',
@@ -49,7 +48,7 @@ export function ProjectsSection() {
       category: 'fullstack',
       role: 'Full Stack Developer',
       description: 'A web application that calculates solar panel requirements and savings based on location and energy consumption. Includes 3D visualization.',
-      image: 'https://images.unsplash.com/photo-1565687981296-535f09db714e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB3ZWIlMjBkZXZlbG9wbWVudCUyMGNvZGluZ3xlbnwxfHx8fDE3NTY4MTA2ODN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+      image: '/imgs/projects/solar-panel-calculator.jpg',
       technologies: ['Next.js', 'Three.js', 'Python', 'FastAPI', 'AWS'],
       githubUrl: '#',
       liveUrl: '#',
@@ -60,7 +59,7 @@ export function ProjectsSection() {
       category: 'frontend',
       role: 'Frontend Developer',
       description: 'An IoT dashboard for managing smart home devices with energy monitoring and automation features. Built with modern React patterns.',
-      image: 'https://images.unsplash.com/photo-1575388902449-6bca946ad549?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXNoYm9hcmQlMjBpbnRlcmZhY2UlMjBkZXNpZ258ZW58MXx8fHwxNzU2ODQ0MTM3fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+      image: '/imgs/projects/smart-home-dashboard.jpg',
       technologies: ['React', 'Redux', 'WebSocket', 'Chart.js', 'Styled Components'],
       githubUrl: '#',
       liveUrl: '#',
@@ -71,7 +70,7 @@ export function ProjectsSection() {
       category: 'fullstack',
       role: 'Lead Developer',
       description: 'An event management platform focused on sustainable events with carbon offset calculations and eco-friendly vendor recommendations.',
-      image: 'https://images.unsplash.com/photo-1577333715735-8fcb0359d906?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlY29tbWVyY2UlMjB3ZWJzaXRlJTIwbW9ja3VwfGVufDF8fHx8MTc1Njc5MTQzM3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+      image: '/imgs/projects/green-events-platform.jpg',
       technologies: ['Vue.js', 'Laravel', 'MySQL', 'Redis', 'Docker'],
       githubUrl: '#',
       liveUrl: '#',
@@ -171,7 +170,7 @@ export function ProjectsSection() {
             >
               <Card className="h-full overflow-hidden group cursor-pointer">
                 <div className="relative overflow-hidden">
-                  <ImageWithFallback
+                  <img
                     src={project.image}
                     alt={project.name}
                     className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
