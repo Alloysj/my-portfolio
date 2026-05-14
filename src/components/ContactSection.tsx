@@ -1,11 +1,6 @@
 import { motion } from "motion/react";
 import { useState } from "react";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "./ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
@@ -59,9 +54,7 @@ export function ContactSection() {
   ];
 
   const handleInputChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement
-    >,
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -73,31 +66,27 @@ export function ContactSection() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Basic validation
-    if (
-      !formData.name ||
-      !formData.email ||
-      !formData.message
-    ) {
+    if (!formData.name || !formData.email || !formData.message) {
       toast.error("Please fill in all required fields");
       return;
     }
 
     setIsSubmitting(true);
 
-    // Simulate form submission
     try {
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      const APPS_SCRIPT_URL =
+        "https://script.google.com/macros/s/AKfycbwcyK1pe03PdQXyMP18VAyDo7E_GuAW3IX86FR4cTn0_z5wGT5XIHSjt4Larn4EW3TB/exec";
 
-      toast.success(
-        "Message sent successfully! I'll get back to you soon.",
-      );
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
+      await fetch(APPS_SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors", // required — Apps Script doesn't return CORS headers
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
       });
+
+      // no-cors means we can't read the response, but if no error is thrown it worked
+      toast.success("Message sent! I'll get back to you soon.");
+      setFormData({ name: "", email: "", subject: "", message: "" });
     } catch (error) {
       toast.error("Failed to send message. Please try again.");
     } finally {
@@ -133,18 +122,14 @@ export function ContactSection() {
         initial="hidden"
         animate="visible"
       >
-        <motion.div
-          variants={itemVariants}
-          className="text-center mb-16"
-        >
+        <motion.div variants={itemVariants} className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-primary mb-4">
             Get In Touch
           </h2>
           <div className="w-24 h-1 bg-primary mx-auto mb-6" />
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Ready to bring your next project to life? Let's
-            discuss how we can work together to create something
-            amazing.
+            Ready to bring your next project to life? Let's discuss how we can
+            work together to create something amazing.
           </p>
         </motion.div>
 
@@ -159,10 +144,7 @@ export function ContactSection() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <form
-                  onSubmit={handleSubmit}
-                  className="space-y-6"
-                >
+                <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="name">Name *</Label>
@@ -245,10 +227,7 @@ export function ContactSection() {
           </motion.div>
 
           {/* Contact Info & Social Links */}
-          <motion.div
-            variants={itemVariants}
-            className="space-y-8"
-          >
+          <motion.div variants={itemVariants} className="space-y-8">
             <Card>
               <CardHeader>
                 <CardTitle>Contact Information</CardTitle>
@@ -260,9 +239,7 @@ export function ContactSection() {
                   </div>
                   <div>
                     <p className="font-medium">Email</p>
-                    <p className="text-muted-foreground">
-                      aloise148@gmail.com
-                    </p>
+                    <p className="text-muted-foreground">aloise148@gmail.com</p>
                   </div>
                 </div>
 
@@ -272,9 +249,7 @@ export function ContactSection() {
                   </div>
                   <div>
                     <p className="font-medium">Phone</p>
-                    <p className="text-muted-foreground">
-                      +254 115 123 026
-                    </p>
+                    <p className="text-muted-foreground">+254 115 123 026</p>
                   </div>
                 </div>
 
@@ -284,9 +259,7 @@ export function ContactSection() {
                   </div>
                   <div>
                     <p className="font-medium">Location</p>
-                    <p className="text-muted-foreground">
-                      Nairobi, Kenya
-                    </p>
+                    <p className="text-muted-foreground">Nairobi, Kenya</p>
                   </div>
                 </div>
               </CardContent>
@@ -309,9 +282,7 @@ export function ContactSection() {
                       whileTap={{ scale: 0.98 }}
                     >
                       <link.icon className="w-5 h-5" />
-                      <span className="font-medium">
-                        {link.name}
-                      </span>
+                      <span className="font-medium">{link.name}</span>
                     </motion.a>
                   ))}
                 </div>
@@ -327,12 +298,10 @@ export function ContactSection() {
                       Let's Build Something Great Together
                     </h4>
                     <p className="text-sm text-muted-foreground">
-                      I'm always excited to work on interesting
-                      projects and collaborate with passionate
-                      individuals. Whether you need a full-stack
-                      web application, a mobile app, or just
-                      want to discuss ideas, I'd love to hear
-                      from you!
+                      I'm always excited to work on interesting projects and
+                      collaborate with passionate individuals. Whether you need
+                      a full-stack web application, a mobile app, or just want
+                      to discuss ideas, I'd love to hear from you!
                     </p>
                   </div>
                 </div>
@@ -348,9 +317,7 @@ export function ContactSection() {
         >
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-4">
-              <div className="text-2xl font-bold text-primary">
-                Alloys
-              </div>
+              <div className="text-2xl font-bold text-primary">Alloys</div>
               <div className="text-muted-foreground">
                 Web Developer & Designer
               </div>
@@ -370,7 +337,7 @@ export function ContactSection() {
                 Terms
               </a>
               <div className="text-muted-foreground">
-                © 2025 Alloys. All rights reserved.
+                © 2026 Alloys. All rights reserved.
               </div>
             </div>
           </div>
