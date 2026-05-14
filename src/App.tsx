@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Toaster } from 'sonner@2.0.3';
+import { Analytics } from '@vercel/analytics/react';
 import { Navigation } from './components/Navigation';
 import { HeroSection } from './components/HeroSection';
 import { AboutSection } from './components/AboutSection';
@@ -126,6 +127,9 @@ export default function App() {
           },
         }}
       />
+
+      {/* Vercel Analytics */}
+      <Analytics />
 
       {/* Smooth scroll behavior */}
       <style>{`
